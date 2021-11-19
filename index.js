@@ -20,7 +20,7 @@ app.use('/user', userRoutes);
 app.use('/product', productRoutes);
 app.use('/cart', cartRoutes);
 
-mongoose.connect('mongodb://localhost/ecommerce', () => console.log('Connected to db'))
+mongoose.connect(process.env.MONGODB, () => console.log('Connected to db'))
 
 app.listen(port, () => {
     console.log("The server is running now!");
